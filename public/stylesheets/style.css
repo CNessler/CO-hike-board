@@ -1,0 +1,102 @@
+.body {
+  padding-top: 70px;
+  background-color: #F0F7F4;
+}
+
+html .ng-scope, .ng-scope {
+  background-color: #F0F7F4;
+}
+nav {
+  height: 30px;
+  padding-top: 10px;
+}
+.navbar .navbar-default{
+  background-color: #D8E2DC;
+  color: #222222;
+}
+
+#select h1 {
+  margin: 5px;
+  font-size: 28px;
+  padding: 0px;
+  margin-right: 30px;
+  color: #222222;
+}
+
+#select .form-control{
+  width: 200px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+#select .two {
+  margin-right: 20px;
+  font-size: 18px;
+}
+.left {
+  height: auto;
+  width: 300px;
+  float: left;
+  display: inline-block;
+}
+img {
+  height: 220px;
+  width: 300px;
+  padding: 10px;
+}
+
+.author {text-align: right;}
+
+.right {
+  padding-left: 20px;
+  margin-top: 0;
+  display: inline-block;
+  width: 800px;
+  color: #222222;
+}
+
+.title h1 {
+  display: inline-block;
+  /*padding-right: 25px;*/
+}
+
+#allPosts {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+
+.post {
+  margin: 0 auto;
+  width: 1200px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #D8E2DC;
+}
+
+#votes {font-size: 20px;}
+
+.positive {color: green;}
+
+.negative {color: red;}
+
+.ng-enter {
+  transition: 0.75s;
+  opacity: 0;
+}
+
+.ng-enter-active {
+  opacity: 1;
+}
+
+.ng-leave {
+  transition: 0.75s;
+  opacity: 1;
+}
+
+.ng-leave-active {
+  opacity: 0;
+}
