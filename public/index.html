@@ -19,7 +19,8 @@
               <h1 class="navbar-brand">COHikeGuide</h1>
               <span class="glyphicon glyphicon-plus"></span><span class="two" ng-click="toggleCustom()"> Submit Hike</span>
               <input class="form-control" type="text" ng-model="searcher" placeholder="Search Hikes">
-              <select class="form-control" ng-model="sort">
+              <label for="">Sort By:</label>
+              <select class="form-control sort" ng-model="sort">
                 <option value="title">title</option>
                 <option value="-votes" selected>votes</option>
                 <option value="date">date</option>
