@@ -1,10 +1,15 @@
 app.factory("HikeService", ['$http', function ($http) {
   return {
-    getAllHikes: function(){
+    all: function(){
       return $http.get('/api/hikes').then(function (data) {
-        console.log(data, "THIS IS THE DATA");
         return data.data;
       })
+    },
+    create: function (post) {
+      $http.post('/api/hikes', post);
+    },
+    update: function (comment) {
+      $http.post('/api/comment', comment);
     }
   }
 }])

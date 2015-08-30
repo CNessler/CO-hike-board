@@ -1,27 +1,17 @@
 app.controller("RedditController", ['$scope', 'HikeService', function ($scope, HikeService) {
   $scope.posts;
-  HikeService.getAllHikes().then(function (hikes) {
-    console.log(hikes, "HAVE BEEN FOUND TO USE");
+  HikeService.all().then(function (hikes) {
     $scope.posts = hikes
   })
-
   $scope.addPost = function () {
-    $scope.posts.push({
-        title: $scope.title,
-        author: $scope.author,
-        image: $scope.image,
-        description: $scope.description,
-        date: new Date(),
-        location: $scope.location,
-        comments: [],
-        votes: 0
-    });
-    $scope.title= "";
-    $scope.location="";
-    $scope.author="";
-    $scope.image="";
-    $scope.description="";
+    $scope.post.date = new Date()
+    $scope.post.location = $scope.location
+    $scope.post.comment = []
+    $scope.post.votes = 0
+    $scope.posts.push($scope.post);
+    HikeService.create($scope.post);
   }
+
   $scope.addVote = function (post) {
     post.votes += 1;
   }
@@ -30,13 +20,15 @@ app.controller("RedditController", ['$scope', 'HikeService', function ($scope, H
   }
 
   $scope.addComment = function (post) {
-      console.log($scope.user, "USER");
-    post.comments.push({
+    var comment = {
+      post: post._id,
       user: $scope.user,
       comment: $scope.commentText
-    })
-    $scope.user="";
-    $scope.commentText="";
+    }
+    $scope.user = "";
+    $scope.commentText = "";
+    $scope.post.comment.push(comment);
+    HikeService.update(comment);
   }
 
   $scope.custom = true;

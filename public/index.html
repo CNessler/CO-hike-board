@@ -32,27 +32,27 @@
           <form class="css-form" ng-submit="addPost()" name="form" novalidate>
             <div class="form-group">
             <label for="title">Title</label>
-              <input class="form-control" type="text" name="title" id="title" ng-model="title" required="" placeholder="Title"/>
+              <input class="form-control" type="text" name="title" id="title" ng-model="post.title" required="" placeholder="Title"/>
                   <span ng-show="form.title.$error.required">Must have a title</span>
             </div>
             <div class="form-group">
             <label for="location">Location</label>
-              <input class="form-control" type="text" name="location" id="location" ng-model="location" required="" placeholder="Location"/>
+              <input class="form-control" type="text" name="location" id="location" ng-model="post.location" required="" placeholder="Location"/>
                   <span ng-show="form.location.$error.required">Must have a title</span>
             </div>
             <div class="form-group">
             <label for="author">Author</label>
-              <input class="form-control" type="text" name="author" id="author" ng-model="author" required placeholder="Author"/>
+              <input class="form-control" type="text" name="author" id="author" ng-model="post.author" required placeholder="Author"/>
                   <span ng-show="form.author.$error.required">Must have an author</span>
             </div>
             <div class="form-group">
             <label for="image">Image URL</label>
-              <input class="form-control" type="text" name="image" id="image" ng-model="image" required placeholder="Image URL"/>
+              <input class="form-control" type="text" name="image" id="image" ng-model="post.image" required placeholder="Image URL"/>
                   <span ng-show="form.image.$error.required">Must have an image</span>
             </div>
             <div class="form-group">
             <label for="description">Description</label>
-              <input class="form-control" type="textarea" name="description" id="description" ng-model="description" required placeholder="Description"/>
+              <input class="form-control" type="textarea" name="description" id="description" ng-model="post.description" required placeholder="Description"/>
                   <span ng-show="form.description.$error.required">Must have a description</span>
             </div>
             <input ng-disabled="form.$invalid" type="submit" name="submit" ng-click="toggleCustom()">
@@ -70,7 +70,7 @@
             <p>{{post.description}}</p>
             <p>
                 <span class="glyphicon glyphicon-calendar"></span> {{post.date | date:'fullDate'}} |
-                <span class="glyphicon glyphicon-comment" ng-click="commentShow()"></span>{{comm}} comments |
+                <span class="glyphicon glyphicon-comment" ng-click="commentShow()"></span>{{post.comment.length}} comments |
                 <span class="glyphicon glyphicon-pencil" ng-click="showComment()"></span>add comment</p>
                 <div class="comments" ng-hide="comment">
                   <form class="form-inline" ng-submit="addComment(post)">
@@ -81,12 +81,12 @@
                     <div class="form-group">
                       <label for="comment">Text</label>
                         <input class="form-control" id="comment" type="textarea" name="commentText" ng-model="commentText" required>
-                      <input type="submit" name="submit" ng-click="comm = comm + 1; showComment()">
+                      <input type="submit" name="submit" ng-click="showComment()">
                     </div>
                   </form>
                 </div>
                 <div class="comment-list" ng-hide="show">
-                  <div ng-repeat="comment in post.comments">
+                  <div ng-repeat="comment in post.comment">
                     <span><strong>{{comment.user}}</strong></span><span> - {{comment.comment}}</span>
                   </div>
                 </div>
