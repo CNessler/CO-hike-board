@@ -4,7 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+require('dotenv').load();
 
+var router = require('./routes/index');
 var api = require('./routes/api');
 
 var app = express();
@@ -19,13 +21,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(allowCrossDomain);   
+app.use(allowCrossDomain);
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', router);
 app.use('/api', api);
 
 var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', ‘http://allowed_site_here.com');
+    res.header('Access-Control-Allow-Origin', process.env.LINK);
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
 
