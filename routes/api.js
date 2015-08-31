@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('monk')('localhost/co-hike-board')
+var db = require('monk')(process.env.MONGOLAB_URI)
 var Hike = db.get('hike')
 
 router.get('/hikes', function(req, res, next) {
