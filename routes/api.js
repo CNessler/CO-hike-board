@@ -14,7 +14,6 @@ router.post('/hikes', function (req, res, next) {
 })
 
 router.post('/comment', function (req, res, next) {
-    console.log(req.body, 'this is the body');
     Hike.update({_id: req.body.post}, {$push: {comment: {user: req.body.user, comment: req.body.comment}}});
 })
 

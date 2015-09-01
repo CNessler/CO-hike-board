@@ -1,5 +1,6 @@
 # Colorado Hike Board
-  - link
+  - http://development.colorado-hike-board.divshot.io/
+  - https://github.com/CNessler/CO-hike-board-public - front-end code
 
 # Overview
 
@@ -12,7 +13,7 @@
   - Angular
   - NodeJS
   - Javascript
-  
+
 # Setup
 
   - express install
