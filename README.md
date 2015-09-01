@@ -1,10 +1,10 @@
 # Colorado Hike Board
   - http://development.colorado-hike-board.divshot.io/
-  - https://github.com/CNessler/CO-hike-board-public - front-end code
+  - https://github.com/CNessler/CO-hike-board-public -> front-end code
 
 # Overview
 
-  Colorado Hike Board is an open-source application where a user is able to search for hikes, find out a bit about it, and also add their own hike.
+  Colorado Hike Board is an open-source application where a user is able to search for hikes, and see a hike location, description, and author.  They can also view comments, add one themselves, and up vote or down vote a hike.
 
 # Technologies
 
@@ -13,6 +13,7 @@
   - Angular
   - NodeJS
   - Javascript
+  - CSS
 
 # Setup
 
