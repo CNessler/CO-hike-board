@@ -14,7 +14,14 @@ router.post('/hikes', function (req, res, next) {
 })
 
 router.post('/comment', function (req, res, next) {
-    Hike.update({_id: req.body.post}, {$push: {comment: {user: req.body.user, comment: req.body.comment}}});
+  Hike.update({_id: req.body.post}, {$push: {comment: {user: req.body.user, comment: req.body.comment}}});
+})
+
+router.post('/upvote', function (req, res, next) {
+  Hike.update({_id: req.body._id}, {$set: {votes: req.body.votes}})
+})
+router.post('/downvote', function (req, res, next) {
+  Hike.update({_id: req.body._id}, {$set: {votes: req.body.votes}})
 })
 
 

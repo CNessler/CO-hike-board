@@ -16,12 +16,14 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://development.colorado-hike-board.divshot.io');
+    res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:8080');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
 
     next();
 }
+// http:development.colorado-hike-board.divshot.io
+// http:127.0.0.1:8080
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
